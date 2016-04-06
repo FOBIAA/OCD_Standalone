@@ -5,11 +5,15 @@
         <link type="text/css" rel="stylesheet" href="css/font-awesome.css"/>
         <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection"/>
+        <!--Import my styles.css-->
+        <link type="text/css" rel="stylesheet" href="css/styles.css"/>
 
         <!--Import jquery-2.2.2.js-->
         <script type="text/javascript" src="js/jquery-2.2.2.js"></script>
         <!--Import materialize.js-->
         <script type="text/javascript" src="js/materialize.js"></script>
+        <!--Import my scripts.js-->
+        <script type="text/javascript" src="js/scripts.js"></script>
 
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -21,5 +25,191 @@
     </head>
 
     <body>
+        <!--One Click Donation start-->
+        <div id="ocd" class="col m8 s12 dashboard">
+            <ul class="tabs z-depth-1">
+                <li class="tab col s4"><a href="#ocd-summary" class="active">Summary</a></li>
+                <li class="tab col s4"><a href="#ocd-config">Configurations</a></li>
+                <li class="tab col s4"><a href="#ocd-history">Awards &amp History</a></li>
+            </ul>
+            <div class="container">
+                <div class="row"></div>
+                <div id="ocd-summary" class="col s12">
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="card">
+                                <div class="card-content center">
+                                    <span class="card-title">You're currently donating <b>10AED</b> every month!<br>WE TRULY APPRECIATE IT</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="card silver">
+                                <div class="card-content center">
+                                    <span class="card-title">Your cumiliative donations so far are around<br><b>2000AED</b></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="card gold">
+                                <div class="card-content center">
+                                    <span class="card-title">You have achived the <b>Golden medal</b><br>For your great contribution in charity</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="card bronze">
+                                <div class="card-content center">
+                                    <span class="card-title">You have claimed the <b>3rd</b> place<br>in the leaderboard of donators</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="card">
+                                <div class="card-content center">
+                                    <span class="card-title">You're more than half way through reaching the next award!</span><br><br><br>
+                                    <div class="row">
+                                        <div class="progress col s8 offset-s2">
+                                            <div class="determinate"></div>
+                                        </div>
+                                    </div>
+                                    <span class="card-title">Just what is it gonna be...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="ocd-config" class="col s12">
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="card">
+                                <div class="card-content center">
+                                    <span class="card-title">Choose the way you like to donate</span>
+                                    <p><br><a id="percent-btn" class="btn tooltipped" data-position="left" data-delay="50" data-tooltip="With transactions">Percentage</a>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="fixed-btn" class="btn tooltipped" data-position="right" data-delay="50" data-tooltip="Every period of time">Fixed amount</a>
+                                    </p>
+                                    <div id="percent">
+                                        <br><span class="card-subtitle">Percentage to be dontated with transactions</span>
+                                        <div class="row">
+                                            <div class="input-field col s2 offset-s2">
+                                                <input class="with-gap" name="percentage" type="radio" id="p1"  />
+                                                <label for="p1">2.5%</label>
+                                            </div>
+                                            <div class="input-field col s1">
+                                                <input class="with-gap" name="percentage" type="radio" id="p2"/>
+                                                <label for="p2">5.0%</label>
+                                            </div>
+                                            <div class="input-field col s3">
+                                                <input class="with-gap" name="percentage" type="radio" id="p3"  />
+                                                <label for="p3">10.0%</label>
+                                            </div>
+                                            <div class="input-field col s2">
+                                                <input id="other-percentage" type="text">
+                                                <label for="other-percentage">Other: (%)</label>
+                                            </div>
+                                        </div>
+                                        <span class="card-subtitle">Frequency of Donating</span>
+                                        <div class="row">
+                                            <div class="input-field col s3 offset-s3">
+                                                <input class="with-gap" name="frequency" type="radio" id="f1"  />
+                                                <label for="f1">Every Transaction</label>
+                                            </div>
+                                            <div class="input-field col s4">
+                                                <input class="with-gap" name="frequency" type="radio" id="f2"/>
+                                                <label for="f2">Every Other Transaction</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="fixed">
+                                        <br><span class="card-subtitle">Fixed amount to be regularly donated</span>
+                                        <div class="row">
+                                            <div class="input-field col s2 offset-s2">
+                                                <input class="with-gap" name="amount" type="radio" id="a1"  />
+                                                <label for="a1">5AED</label>
+                                            </div>
+                                            <div class="input-field col s1">
+                                                <input class="with-gap" name="amount" type="radio" id="a2"/>
+                                                <label for="a2">15AED</label>
+                                            </div>
+                                            <div class="input-field col s3">
+                                                <input class="with-gap" name="amount" type="radio" id="a3"  />
+                                                <label for="a3">30AED</label>
+                                            </div>
+                                            <div class="input-field col s2">
+                                                <input id="other-amount" type="text">
+                                                <label for="other-amount">Other: (AED)</label>
+                                            </div>
+                                        </div>
+                                        <span class="card-subtitle">Frequency of Donating</span>
+                                        <div class="row">
+                                            <div class="input-field col s2 offset-s3">
+                                                <input class="with-gap" name="period" type="radio" id="d1"  />
+                                                <label for="d1">Weekly</label>
+                                            </div>
+                                            <div class="input-field col s1">
+                                                <input class="with-gap" name="period" type="radio" id="d2"/>
+                                                <label for="d2">Monthly</label>
+                                            </div>
+                                            <div class="input-field col s3">
+                                                <input class="with-gap" name="period" type="radio" id="d3"/>
+                                                <label for="d3">Annually</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="card">
+                                <div class="card-content center">
+                                    <span class="card-title">Reveal the hero?</span>
+                                    <div class="row">
+                                        <div class="input-field col s8 offset-s2">
+                                            <input class="with-gap" name="group1" type="radio" id="a1"  />
+                                            <label for="a1">Keep my donations anonymous &amp unknow through out the site</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s8 offset-s2">
+                                            <input class="with-gap" name="group1" type="radio" id="a2"/>
+                                            <label for="a2">Show others your name and compete entering the leaderboard</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="card">
+                                <div class="card-content center">
+                                    <span class="card-title">Where your donation goes</span><br><br>
+                                    <p>
+                                        <img class="circle" src="http://cdn.emiratesnbd.com/en/assets/Image/CSR_NoorDubai.jpg">&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <img class="circle" src="http://cdn.emiratesnbd.com/en/assets/Image/CSR_Awqaf.jpg">&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <img class="circle" src="http://cdn.emiratesnbd.com/en/assets/Image/CSR_Beit.jpg">&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <img class="circle" src="http://cdn.emiratesnbd.com/en/assets/Image/CSR_daralber.jpg">&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <img class="circle" src="http://cdn.emiratesnbd.com/en/assets/Image/CSR_Duabicares.jpg">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="ocd-history" class="center"><img width="90%" src="img/history.png"></div>
+            </div>
+        </div>
+        <!--One Click Donation end-->
     </body>
 </html>
